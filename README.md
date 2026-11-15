@@ -128,3 +128,51 @@ Several different experimental techniques can produce this gene-by-sample matrix
 In contrast, single-cell RNA sequencing, or scRNA-seq, is a more recent methodology where every sample corresponds to a single, isolated cell. This powerful technique allows researchers to quantify the mRNA content of individual cells rather than relying on an aggregate average, uncovering cellular heterogeneity and distinct cell types that would otherwise be completely washed out in a bulk mixture.
 
 An older technology known as DNA microarrays also produces a similar gene-by-sample matrix format, though the underlying experimental chemistry and the resulting numbers differ significantly from sequencing methods. Instead of counting discrete cDNA fragments that yield raw integer read counts, microarrays use hybridization and measure fluorescence intensity, resulting in continuous decimal numbers. Despite these differences in how the values are generated, the overall biological interpretation remains very similar, where higher numbers indicate greater relative mRNA abundance for a given gene and lower numbers indicate less expression.
+
+---
+
+In complex organisms like humans, DNA is not merely a simple linear strand of letters or a simple loop like those found in bacteria. Instead, it is a highly organized, physical three-dimensional structure tightly packaged into chromosomes. As explored through epigenetics, this DNA is wound around proteins called histones, forming a dynamic physical architecture where the tightness of the wrapping regulates whether specific genes are accessible for transcription.
+
+In humans, this genomic material is organized into twenty-three pairs of chromosomes, totaling forty-six chromosomes per cell. These pairs consist of twenty-two numbered autosomes plus two sex chromosomes, designated as X and Y, with biological females carrying two X chromosomes and biological males carrying one X and one Y chromosome. For each pair, one complete set of chromosomes is inherited from the mother and the other from the father.
+
+The vast majority of cells in the human body are diploid, meaning they contain two full copies of each chromosome. The primary exceptions are gametes—the reproductive sex cells, specifically eggs in females and sperm in males—which are haploid cells containing only a single copy of each chromosome. This halving of the chromosome number is essential because during sexual reproduction, the fusion of a male and female gamete restores the full diploid complement of twenty-three pairs, successfully passing a balanced genetic blend from both parents to the offspring.
+
+![alt text](media/images/chromosomes.png)
+
+Only a small fraction of the total DNA sequence actually contains the instructions used to build proteins. While standard diagrams can make it seem like every part of the genome codes for amino acids, the reality is much more sparse. The segments of DNA that do contain codons specifying how amino acids should be strung together are called **exons**. These coding regions represent a surprisingly tiny fraction of the overall genome, though they carry the vital genetic blueprints needed for protein synthesis.
+
+Interspersed between these coding regions are **introns**, which are non-coding segments of DNA. Interestingly, introns do get transcribed along with exons into the initial messenger RNA molecule, meaning they temporarily become part of the transcript. However, before the mRNA is used for translation, these introns are systematically spliced out and removed from the strand, leaving only the joined exons to direct protein assembly.
+
+This complex architecture of alternating exons and introns enables an incredible layer of biological diversity through alternative splicing. Because introns can be removed and exons can be stitched together in various combinations, a single gene can produce multiple distinct mRNA transcripts and, consequently, different protein variants depending on how the transcript is processed.
+
+Beyond exons and introns, another crucial element of the genome is the **promoter**. Although promoters are not transcribed into mRNA themselves, they are located immediately upstream of genes and serve as essential regulatory binding sites. RNA polymerase and transcription factors—specialized proteins that either facilitate or hinder polymerase binding—attach to the promoter region to control whether a gene is transcribed and how actively it is expressed. Because promoters dictate transcription efficiency, sequence variations or mutations within a promoter region can significantly alter gene expression levels by making it easier or harder for the transcriptional machinery to engage.
+
+Furthermore, a massive portion of the genome does not fall into exons, introns, or promoters at all. These expansive stretches of DNA situated between genes do not get transcribed into mRNA and often lack a well-understood, direct coding function. While these regions were historically dismissed as "junk DNA," modern genomics has largely abandoned that label because we now recognize that much of this sequence likely plays critical roles in epigenetic regulation, structural organization, or other unknown regulatory pathways. Rather than being truly useless, they represent areas of the genome whose functional impact is still being uncovered.
+
+![alt text](media/images/dna-seq.png)
+
+### Types of Mutation
+
+During cell division, DNA is replicated to pass on genetic information, but copying errors can sometimes occur. While cells have error-correcting mechanisms to fix many of these mistakes, some slip through and become permanent alterations known as mutations. These genetic changes generally fall into three main categories based on how they alter the nucleotide sequence.
+
+A deletion happens when a portion of the DNA sequence is accidentally left out during copying, shortening the overall sequence. An insertion occurs when new, extra letters are mistakenly added into the sequence, making it longer. Finally, a substitution takes place when one or more letters are swapped out for different ones, changing the identity of the bases without altering the total length of the DNA sequence.
+
+The consequences of mutations depend heavily on where they occur and how they alter the genetic code. While it might seem like adding or deleting a single nucleotide is a minor change, it can trigger what is known as a **frameshift mutation**.
+
+Because exons are read in non-overlapping triplets—the codons that specify amino acids—the cellular machinery reads the genetic sequence in strict three-letter frames. If a single letter or any number of nucleotides not divisible by three is inserted or deleted, it shifts the reading frame of every single codon downstream from the mutation.
+
+To visualize this, consider the three-letter sentence "the fat cat sat." If the initial "t" is deleted and the remaining letters are still read in three-letter groups, the entire message becomes completely garbled and incomprehensible. This exact disruption happens during a frameshift mutation, where shifting the reading frame alters every subsequent amino acid in the chain, usually resulting in a completely non-functional protein.
+
+![alt text](media/images/dna-mutations.png)
+
+A point mutation is a specific type of substitution where a single nucleotide is swapped for another, leaving the overall length of the DNA sequence unchanged. Because the genetic code is read in three-letter codons that specify particular amino acids or start and stop signals, a single-nucleotide change can have vastly different outcomes depending on how it alters the resulting codon.
+
+For example, consider a normal DNA sequence of `TTC`, which is transcribed into the mRNA codon `AAG` and ultimately directs the cell to incorporate the amino acid lysine into the growing protein chain. Depending on how a point mutation alters this codon, it falls into one of three main categories:
+
+A silent mutation occurs when a single nucleotide changes—such as `TTT` at the DNA level and `AAA` at the mRNA level—but the new codon still specifies the exact same amino acid, lysine. Because the final protein sequence remains completely unaffected, the mutation is functionally silent.
+
+A nonsense mutation happens when a point mutation accidentally turns a codon into a premature stop signal, such as the mRNA codon `UAG`. This halts the translation process early, usually resulting in a truncated and non-functional protein.
+
+A missense mutation occurs when the substitution results in a different amino acid being incorporated into the protein chain. The biological consequence of a missense mutation often depends on the biochemical properties of the newly introduced amino acid compared to the original one. A conservative missense mutation replaces the target amino acid with one that is biochemically similar—such as substituting lysine with arginine—which tends to have a milder impact on protein structure and function. In contrast, a non-conservative missense mutation introduces a chemically dissimilar amino acid—such as substituting lysine with threonine—which can drastically disrupt the protein's folding and normal biological activity.
+
+![alt text](media/images/point-mutation.png)
